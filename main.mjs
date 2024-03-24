@@ -14,6 +14,8 @@ async function main () {
 
     const sourceDefault = path.join(basedir, 'input.txt')
     const source = process.env.SOURCE || sourceDefault
+
+    // fsPromises.readFile でテキストファイルを読み込み
     const texts = (await fsPromises.readFile(source))
       .toString()
       .split('\n')
